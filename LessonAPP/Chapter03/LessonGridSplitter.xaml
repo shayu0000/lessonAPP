@@ -8,6 +8,49 @@
         WindowStartupLocation="CenterOwner"
         Title="LessonGridSplitter" Height="450" Width="800">
     <Grid>
-        
+        <!-- 先定义所有行列 -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 垂直分割线（作用于列） -->
+        <GridSplitter Grid.Column="1" Grid.RowSpan="3"
+                      HorizontalAlignment="Center"  Width="2" ShowsPreview="True"/>
+
+        <!-- 水平分割线（作用于行） -->
+        <GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                      VerticalAlignment="Center" HorizontalAlignment="Stretch"  Height="2" ShowsPreview="True"/>
+
+        <!-- 左侧列内容 -->
+        <TextBlock Grid.Row="0" Grid.Column="0" 
+                   Background="SeaGreen" FontSize="20" Foreground="White" TextWrapping="Wrap">
+            1234567890
+        </TextBlock>
+
+        <!-- 右侧列内容 -->
+        <TextBlock Grid.Row="0" Grid.Column="2" 
+                   Background="Black" FontSize="20" Foreground="White" TextWrapping="Wrap">
+            1234567890
+        </TextBlock>
+
+
+        <!-- 底部行内容 -->
+        <TextBlock Grid.Row="2" Grid.Column="0" 
+                   Background="SeaGreen" FontSize="20" Foreground="White" TextWrapping="Wrap">
+            1234567890
+        </TextBlock>
+
+        <TextBlock Grid.Row="2" Grid.Column="2" 
+                   Background="Black" FontSize="20" Foreground="White" TextWrapping="Wrap">
+            1234567890
+        </TextBlock>
     </Grid>
 </Window>
